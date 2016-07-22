@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home', as: :home
   get '/org_one' => 'pages#org_one', as: :org_one
   get '/donate' => 'pages#donate', as: :donate
+  get '/profile' => 'pages#profile', as: :profile
   devise_for :users#, :controllers => {:registrations => "registrations"}
   resources :applicants
   # The priority is based upon order of creation: first created -> highest priority.

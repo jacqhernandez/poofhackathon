@@ -3,6 +3,7 @@
 
 <div style="margin-top: 25vh;">
   <% if user_signed_in? %>
+    <%= link_to "Profile", profile_path, :class => 'index-link', style: "font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: 300;letter-spacing: 1px; color:#D3D3D3;" %>&nbsp;&nbsp;&nbsp;
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'index-link', style: "font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: 300;letter-spacing: 1px; color:#D3D3D3;" %>
   <% else %>
     <%= link_to "Register", new_applicant_path, :class => 'index-link', style: "font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: 300;letter-spacing: 1px; color:#D3D3D3;" %>&nbsp;&nbsp;&nbsp;

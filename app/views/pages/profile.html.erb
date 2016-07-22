@@ -1,0 +1,56 @@
+<div style="height: 45px; padding-top: 5px; padding-left: 15px; width: 100%; background-color: #2FAFAE; color:white; font-family: 'Roboto', sans-serif; font-size: 25px; font-weight: 900; letter-spacing: 3px; text-align:center">LOGO</div>
+<% if user_signed_in? %>
+  <div style="margin-top: 5vh; padding-left: 25px; padding-right: 25px;">
+    <h1 style="width: 100%; color: #D3D3D3; font-family: 'Roboto', sans-serif; font-size: 35px; font-weight: 900; letter-spacing: 3px; text-align:left; line-height: 25px;"><%= current_user.name %><br><span style="font-size: 20px; font-weight: 500; color: #2FAFAE; letter-spacing: 1px;"><%= current_user.number %></h1><br>
+    <p style="font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: 300; text-align:left; letter-spacing: 2.5px; color: #D3D3D3;">Member since January 2016<br>Donated a total of <span style="color: #2FAFAE;">P1,505.00</span></p>
+  </div>
+  <div style="background-color: #ecf0f1; height: 50vh; overflow-y: auto; padding-left: 25px; padding-right: 25px; margin-top: 20px;">
+    <h1 style="width: 100%; color: #34393F; font-family: 'Roboto', sans-serif; font-size: 25px; font-weight: 900; letter-spacing: 3px; text-align:left;">ORGANIZATIONS HELPED</h1>
+    <div class="image" style="margin-bottom: 40px;" width: "100%;">
+      <img src="/assets/i4.jpg" width="100%" />
+      <h2 style="top: 150px;"><span><%= link_to 'UNCHR PHILIPPINES', org_one_path, style:'color:white; text-decoration:none;' %></span></h2>
+    </div>
+    <div class="image" style="margin-bottom: 40px;" width: "100%;">
+      <img src="/assets/i3.jpg" width="100%" />
+      <h2><span><%= link_to 'PHILIPPINE TOY LIBRARY', org_one_path, style:'color:white; text-decoration:none;' %></span></h2>
+    </div>
+    <div class="image" style="margin-bottom: 40px;" width: "100%;">
+      <img src="/assets/i2.jpg" width="100%" />
+      <h2><span><%= link_to 'RED CROSS PHILIPPINES', org_one_path, style:'color:white; text-decoration:none;' %></span></h2>
+    </div>
+     <div class="image" style="margin-bottom: 40px;" width: "100%;">
+      <img src="/assets/i1.jpg" width="100%" />
+      <h2><span><%= link_to 'PROJECT LIWANAG', org_one_path, style:'color:white; text-decoration:none;' %></span></h2>
+    </div>
+  </div>
+<% end %>
+
+<style>
+  .image { 
+    position: relative; 
+    width: 100%; /* for IE 6 */
+  }
+  .image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+  }
+  h2 { 
+   position: absolute; 
+   top: 150px; 
+   left: 0; 
+   width: 100%; 
+  }
+  h2 span { 
+   color: white; 
+   font: 600 18px 'Roboto', sans-serif; 
+   letter-spacing: 2px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background-color: #2FAFAE;
+   /*background: rgba(0, 0, 0, 0.7);*/
+   padding: 10px; 
+  }
+  h2 span.spacer {
+    padding:0 5px;
+  }
+</style>
+
