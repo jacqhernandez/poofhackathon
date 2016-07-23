@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :lgu_officers
   root 'pages#index'
-  devise_for :users#, :controllers => {:registrations => "registrations"}
   get '/prepare' => 'pages#prepare', as: :prepare
   get '/donate' => 'pages#donate', as: :donate
   get '/view' => 'pages#view', as: :view
