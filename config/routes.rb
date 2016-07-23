@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/prepare' => 'pages#prepare', as: :prepare
   get '/donate' => 'pages#donate', as: :donate
   get '/view' => 'pages#view', as: :view
+  get '/registrations/autocomplete_area_name' => '/registrations/autocomplete_area_name', as: :autocomplete_area_name_registrations
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

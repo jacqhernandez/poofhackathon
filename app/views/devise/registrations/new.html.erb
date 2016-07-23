@@ -16,6 +16,11 @@
   </div>
 
   <div class="field">
+    <%= f.autocomplete_field :area, autocomplete_area_name_registrations_path, placeholder: 'Area',:id_element => '#area_id', include_id: false %>
+    <%= f.hidden_field :area_id, :id => "area_id" %>
+  </div>
+
+  <div class="field">
     <%= f.text_field :username, autofocus: true, placeholder: 'Username' %>
   </div>
 
