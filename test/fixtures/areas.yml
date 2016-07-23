@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  province: MyString
+  is_city: false
+  longitude: 9.99
+  latitude: 9.99
+  region_id: 1
+
+two:
+  name: MyString
+  province: MyString
+  is_city: false
+  longitude: 9.99
+  latitude: 9.99
+  region_id: 1
