@@ -8,7 +8,7 @@ class CreateResidents < ActiveRecord::Migration
       t.decimal :latitude
       t.string :phone_number
       t.string :phone_subscriber
-      t.boolean :is_safe
+      t.boolean :is_safe, default: true
       t.integer :area_id
 
       t.timestamps null: false

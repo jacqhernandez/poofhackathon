@@ -15,5 +15,7 @@
 //= require jquery-ui/autocomplete
 //= require autocomplete-rails
 //= require twitter/bootstrap
+//= require underscore
+//= require gmaps/google
 //= require turbolinks
 //= require_tree .

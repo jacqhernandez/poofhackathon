@@ -1,0 +1,38 @@
+<%= form_for(@lgu_response) do |f| %>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :disaster_type %><br>
+    <%= f.select :disaster_type, options_for_select(['Flood','Earthquake','Volcano','Tsunami','Others']) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    lgu_response_latitude.value = position.coords.latitude;
+    lgu_response_longitude.value = position.coords.longitude;
+}
+$( document ).ready(function() {
+    getLocation();
+});
+</script>
