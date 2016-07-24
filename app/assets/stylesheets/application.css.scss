@@ -72,7 +72,7 @@ body {
 
 .ui-helper-hidden-accessible { display:none; }
 
-/*ANNA*/
+/*HOME*/
 
 .wrapper{
     height: 100%;
@@ -153,4 +153,25 @@ body {
   text-align: center;
   overflow: hidden;
 }
-/*ANNAEND*/
+/*HOMEEND*/
+
+/*LGURESPONSE*/
+.wrapperres{
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 100%;
+  padding: 10px;
+
+}
+
+.titleresponse
+{
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: #75baa8;
+}
+/*LGURESPONSEEND*/
