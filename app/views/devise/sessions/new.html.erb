@@ -1,15 +1,16 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.text_field :username, autofocus: true, placeholder: 'Username' %>
+<center>
+  <div style="padding-top: 5vh;">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div>
+        <%= f.text_field :username, autofocus: true, placeholder: 'Username', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.submit "Log in", class: "form-control", style: "width: 300px; margin-top: 10px; background-color: #75BAA8;" %>
+      </div>
+      <br>Are you a new user? <%= link_to 'Register', new_lgu_officer_registration_path, style: "text-decoration:none; color: #75BAA8;"%></span>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+</center>

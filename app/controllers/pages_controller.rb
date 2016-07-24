@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   def prepare
   end
 
+  def about
+  end
+
   def view
     start_date = params['start_date']
     end_date = params['end_date']

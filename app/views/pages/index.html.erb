@@ -1,22 +1,11 @@
-THIS IS THE INDEX PAGE
-
-  <div id="home">
-    <div class="header">
-      <div class = "contents">
-        <div id="logo">LIKOM</div>
-        <div class = "subhead">
-          <div id="caption">Helping the nation</div>
-          <div id="caption2">through data collection and dissemination</div>
-        </div>
+<div id="home">
+  <div class="header">
+    <div class = "contents">
+      <div id="logo">LIKOM</div>
+      <div class = "subhead">
+        <div id="caption">Helping the nation</div>
+        <div id="caption2">through data collection and dissemination</div>
       </div>
     </div>
   </div>
-
-<div>
-  <% if lgu_officer_signed_in? %>
-    LGU Officer <%= current_lgu_officer.first_name %> <%= current_lgu_officer.last_name %> is logged in. | <%= link_to 'Logout',  destroy_lgu_officer_session_path, method: :delete %>
-  <%= link_to 'Create LGU Response', new_lgu_response_path %>
-  <% else %>
-    <%= link_to 'Register', new_lgu_officer_registration_path %> | <%= link_to 'Login', new_lgu_officer_session_path %>
-  <% end %>
 </div>
