@@ -91,7 +91,7 @@ body {
 #home{
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  background: url("../img/likomhome.jpg") no-repeat center center fixed; 
+  background: url("likomhome.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -202,3 +202,88 @@ body {
     float: right;
     margin: 20;
 }
+
+/** donate **/
+
+
+.container-d{
+height:500px;
+width:1000px;
+border-left:none;
+border-right:none;
+text-align:center;
+}
+
+.container-d div{
+display: inline-block;
+vertical-align: middle;
+line-height: 100px;
+} 
+ .columnd-left{ float: left; width: 32%;  height:500px;}
+.columnd-right{ float: right; width: 32%;  height:500px; margin-left: -8px;}
+.columnd-center{ display: inline-block; width: 33%; height:500px; }
+
+.donate-menu a:link, container-d a:link{
+  color: black;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.donate-menu a:visited, container-d a:visited {
+  color: black;
+}
+
+.donate-menu a:hover, container-d a:hover {
+  color: #CF6766;
+}
+
+.donate-menu a:active, container-d a:active {
+  color: #CF6766;
+}
+
+.donate-menu .d-title {
+  margin-top: -70px;
+}
+
+
+.container-d img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.container-d p {
+  margin-top: -30px;
+  line-height: 5px;
+}
+
+.how {
+  background-color: #75baa8;
+  height:420px;
+}
+
+
+.container-d2{
+height:300px;
+width:1000px;
+border-left:none;
+border-right:none;
+text-align:center;
+}
+
+.container-d2 div{
+display: inline-block;
+vertical-align: middle;
+line-height: 100px;
+} 
+ .columnd-left2{ float: left; width: 32%;  height:200px;}
+.columnd-right2{ float: right; width: 32%;  height:200px; margin-left: -8px;}
+.columnd-center2{ display: inline-block; width: 33%; height:200px; }
+
+.container-d2 p {
+  line-height: 12px;
+}
+
+#donate-menu{
+  margin: 30px;
+}
+
