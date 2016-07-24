@@ -1,15 +1,20 @@
-<div style="height: 20vh;">
-  People in need as of <%= @date_message %><br><br>
-  Filter:
-  <form action="/view">
-    <%= select_tag("start_date", options_for_select(dates.sort),:prompt=>"Start Date") %>
-    <%= select_tag("end_date", options_for_select(dates.sort),:prompt=>"End Date") %>
-    <%= submit_tag 'Search' %>
-  </form>
-
+<div class="container-fluid">
+  <div class="row" style="height: 90vh; overflow:hidden;">
+    <div class="col-md-8">
+      <div id="map" style="height: 100vh; background-color: #E4E2E1;"></div>
+    </div>
+    <div class="col-md-4" style="height: 100vh;">
+      People in need as of <%= @date_message %><br><br>
+      Filter:
+      <form action="/view">
+        <%= select_tag("start_date", options_for_select(dates.sort),:prompt=>"Start Date") %>
+        <%= select_tag("end_date", options_for_select(dates.sort),:prompt=>"End Date") %>
+        <%= submit_tag 'Search' %>
+      </form>
+    </div>
+  </div>
 </div>
 
-<div id="map" style="height: 80vh; background-color: #E4E2E1;"></div>
 
 <script>
 $(document).ready(function() {
