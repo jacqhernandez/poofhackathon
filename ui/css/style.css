@@ -1,4 +1,12 @@
 /*ANNA*/
+
+.wrapper{
+		height: 100%;
+	width: 100%;
+	margin: 0px;
+   padding: 0px;
+	overflow: hidden;
+}
 .navbar-default {
   background-color:white;
   background-image: none;
