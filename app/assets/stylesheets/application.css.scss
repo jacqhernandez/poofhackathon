@@ -272,9 +272,8 @@ line-height: 100px;
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 
-.container-d p {
-  margin-top: -30px;
-  line-height: 5px;
+.d-content p {
+  margin-top: -50px;
 }
 
 .how {
@@ -306,6 +305,20 @@ line-height: 100px;
 
 #donate-menu{
   margin: 30px;
+  letter-spacing: 2px;
+}
+
+#older a{
+  float: right;
+  margin-top: -50px;
+}
+
+.maincol-c {
+  margin-left: 20px;
+}
+
+.title-contact, .title-d{
+  color: #75baa8;
 }
 
 /** view **/
@@ -318,4 +331,3 @@ line-height: 100px;
   margin-top: 10px;
   background-color: #75BAA8;
 }
-

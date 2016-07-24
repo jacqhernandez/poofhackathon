@@ -1,0 +1,29 @@
+<div style="padding: 5vh 5vw;">
+  <center><h1 style="color:#75BAA8">Resident Responses</h1></center>
+  <div style="margin-top: 50px;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Logged At</th>
+          <th>Address</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Resident</th>
+          <th>Is Safe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @resident_responses.each do |r| %>
+          <tr>
+            <td><%= r.created_at %></td>
+            <td><%= r.address %></td>
+            <td><%= r.latitude %></td>
+            <td><%= r.longitude %></td>
+            <td><%= r.resident.first_name %> <%= r.resident.last_name %></td>
+            <td><%= r.is_safe %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

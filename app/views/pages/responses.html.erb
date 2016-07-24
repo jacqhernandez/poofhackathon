@@ -1,0 +1,25 @@
+<div style="padding: 5vh 5vw;">
+  <center><h1 style="color:#75BAA8">LGU Responses</h1></center>
+  <div style="margin-top: 50px;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Logged At</th>
+          <th>Disaster Type</th>
+          <th>Address</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @responses.each do |r| %>
+          <tr>
+            <td><%= r.created_at %></td>
+            <td><%= r.disaster_type %></td>
+            <td><%= r.address %></td>
+            <td><%= link_to 'Resident Responses', resident_responses_path(r.id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

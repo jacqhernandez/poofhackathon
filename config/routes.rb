@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact', as: :contact
   get '/area' => 'pages#area', as: :area
   get '/help_centers' => 'pages#centers', as: :centers
+  get '/responses' => 'pages#responses', as: :responses
   get '/registrations/autocomplete_area_name' => '/registrations/autocomplete_area_name', as: :autocomplete_area_name_registrations
+  get '/resident_responses/:id' => 'pages#resident_responses', as: :resident_responses
   resources :lgu_responses
 
   # The priority is based upon order of creation: first created -> highest priority.

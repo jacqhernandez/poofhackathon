@@ -20,6 +20,14 @@ class PagesController < ApplicationController
     @areas = Area.all
   end
 
+  def responses
+    @responses = LguResponse.where(lgu_officer_id: current_lgu_officer.id)
+  end
+
+  def resident_responses
+    @resident_responses = ResidentLguResponse.where(lgu_response_id: params[:id])
+  end
+
   def view
     start_date = params['start_date']
     end_date = params['end_date']
@@ -47,7 +55,8 @@ class PagesController < ApplicationController
     end
   end
 
-
+  def contact
+  end
 
   def donate
   end
