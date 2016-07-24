@@ -5,12 +5,12 @@
       <div id="map" style="height: 100vh; background-color: #E4E2E1;"></div>
     </div>
     <div class="col-md-4" style="height: 100vh;">
-      People in need as of <%= @date_message %><br><br>
-      Filter:
+      <h3>People in need as of <span style="color:#75BAA8;"><%= @date_message %></span></h3><br><br>
+      <h4>Filter by date:</h4>
       <form action="/view">
-        <%= select_tag("start_date", options_for_select(dates.sort),:prompt=>"Start Date") %>
-        <%= select_tag("end_date", options_for_select(dates.sort),:prompt=>"End Date") %>
-        <%= submit_tag 'Search' %>
+        <%= select_tag("start_date", options_for_select(dates.sort),:prompt=>"Start Date", :class=>"form-control date-select") %>
+        <%= select_tag("end_date", options_for_select(dates.sort),:prompt=>"End Date", :class=>"form-control date-select") %>
+        <%= submit_tag 'Search', :class=>"form-control date-submit" %>
       </form>
       <h3>Areas in Calamity/Disaster:</h3>
       <h3>Nearby Evacuation Areas:</h3>
