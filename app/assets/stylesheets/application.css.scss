@@ -126,19 +126,52 @@ body {
   font-weight: 400;
 }
 
-h1{
-  font-family: 'Montserrat', sans-serif;
-  color: #75baa8;
-  font-weight: 700;
+
+/** prepare **/
+
+#parent {
+  width: 100%;
+  margin-right: 500px;
+}
+.links {
+  float: left;
+  width: 20%;
+}
+.content {
+  overflow: hidden;
+  width: 70%;
+  display:none;
+}
+.active{
+  display:block;
+}
+.links a:link, .sub a:link{
+  color: black;
+  text-decoration: none;
+  line-height: 30px;
 }
 
-h1{
-  font-family: 'Montserrat', sans-serif;
-  color: #75baa8;
-  font-weight: 400;
+.right a:link {
+  color: black;
+  text-decoration: none;
 }
 
-p{
-  font-family: 'Montserrat', sans-serif;
-  color: #75baa8;
+.links a:visited, .sub a:visited, .right a:visited {
+  color: black;
+}
+
+.links a:hover, .sub a:hover, .right a:hover {
+  color: #75BAA8;
+}
+
+.links a:active, .sub a:active, .right a:active {
+  color: #75BAA8;
+}
+.left {
+  float: left;
+  margin-top: -18px;
+}
+.right {
+    float: right;
+    margin: 20;
 }
