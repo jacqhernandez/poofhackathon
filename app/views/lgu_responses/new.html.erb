@@ -1,21 +1,17 @@
 <div class ="wrapperres">
 <div class="titleresponse">Local Government Unit Response</div><br>
-
   <%= form_for(@lgu_response) do |f| %>
   <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
+    <%= f.text_field :latitude, autofocus: true, placeholder: 'Latitude', class: "form-control", style: "width: 300px;" %>
   </div>
   <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
+    <%= f.text_field :longitude, autofocus: true, placeholder: 'Longitude', class: "form-control", style: "width: 300px;" %>
   </div>
   <div class="field">
-    <%= f.label :disaster_type %><br>
-    <%= f.select :disaster_type, options_for_select(['Flood','Earthquake','Volcano','Tsunami','Others']) %>
+    <%= f.select :disaster_type, options_for_select(['Flood','Earthquake','Volcano','Tsunami','Others']), {:include_blank => 'Disaster Type'}, prompt: 'Disaster Type', class: "form-control", style: "width: 300px;" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create", class: "form-control", style: "width: 300px; margin-top: 10px; background-color: #75BAA8;" %>
   </div>
 <% end %>
 
