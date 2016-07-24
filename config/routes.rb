@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/prepare' => 'pages#prepare', as: :prepare
   get '/donate' => 'pages#donate', as: :donate
   get '/view' => 'pages#view', as: :view
-  get '/navbar' => 'pages#navbar', as: :navbar
+  get '/about' => 'pages#about', as: :about
+  get '/contact' => 'pages#contact', as: :contact
   get '/registrations/autocomplete_area_name' => '/registrations/autocomplete_area_name', as: :autocomplete_area_name_registrations
   resources :lgu_responses
 

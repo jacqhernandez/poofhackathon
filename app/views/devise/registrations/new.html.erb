@@ -1,40 +1,33 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.text_field :first_name, autofocus: true, placeholder: 'First Name' %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :last_name, autofocus: true, placeholder: 'Last Name' %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :phone_number, autofocus: true, placeholder: 'Mobile Number (e.g. 09xx)' %>
-  </div>
-
-  <div class="field">
-    <%= f.autocomplete_field :area, autocomplete_area_name_registrations_path, placeholder: 'Area',:id_element => '#area_id', include_id: false %>
-    <%= f.hidden_field :area_id, :id => "area_id" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :username, autofocus: true, placeholder: 'Username' %>
-  </div>
-
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %><% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+<center>
+  <div style="padding-top: 5vh;">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <div>
+        <%= f.text_field :first_name, autofocus: true, placeholder: 'First Name', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.text_field :last_name, autofocus: true, placeholder: 'Last Name', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.text_field :phone_number, autofocus: true, placeholder: 'Mobile Number (e.g. 09xx)', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.autocomplete_field :area, autocomplete_area_name_registrations_path, placeholder: 'Area',:id_element => '#area_id', include_id: false, class: "form-control", style: "width: 300px;" %>
+        <%= f.hidden_field :area_id, :id => "area_id" %>
+      </div>
+      <div>
+        <%= f.text_field :username, autofocus: true, placeholder: 'Username', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password (6 characters minimum)', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password', class: "form-control", style: "width: 300px;" %>
+      </div>
+      <div>
+        <%= f.submit "Register", class: "form-control", style: "width: 300px; margin-top: 10px; background-color: #75BAA8;" %>
+      </div>
+      <br>Are you an existing user? <%= link_to 'Login', new_lgu_officer_session_path, style: "text-decoration:none; color: #75BAA8;"%></span>
     <% end %>
   </div>
-
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+</center>
