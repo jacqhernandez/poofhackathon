@@ -1,0 +1,48 @@
+<div style="padding: 5vh 5vw;">
+  <center><h1 style="color:#75BAA8">HELP CENTERS</h1></center>
+  <% @areas.each do |a| %>
+    <h2 style="color:#75BAA8"><%= a.name %></h2>
+    <h4>Evacuation Centers</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Contact Person</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% a.evacuation_center_areas.each do |eca| %>
+          <tr>
+            <td><%= eca.evacuation_center.name %></td>
+            <td><%= eca.evacuation_center.address %></td>
+            <td><%= eca.evacuation_center.contact_person %></td>
+            <td><%= eca.evacuation_center.contact_number %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <h4>Health Centers</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Contact Person</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% a.health_center_areas.each do |eca| %>
+          <tr>
+            <td><%= eca.health_center.name %></td>
+            <td><%= eca.health_center.address %></td>
+            <td><%= eca.health_center.contact_person %></td>
+            <td><%= eca.health_center.contact_number %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

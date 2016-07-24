@@ -11,6 +11,15 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def area
+    @area = Area.find(current_lgu_officer.area_id)
+    @residents = Resident.where(area_id: @area.id)
+  end
+
+  def centers
+    @areas = Area.all
+  end
+
   def view
     start_date = params['start_date']
     end_date = params['end_date']
@@ -30,7 +39,7 @@ class PagesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@resident_lgu_responses) do |resident_lgu_response, marker|
       marker.lat resident_lgu_response.latitude
       marker.lng resident_lgu_response.longitude
-       marker.infowindow "Location: #{resident_lgu_response.address}<br>Longitude: #{resident_lgu_response.longitude}<br>Latitude: #{resident_lgu_response.latitude}<br>Disaster: #{resident_lgu_response.lgu_response.disaster_type}"
+       marker.infowindow "Location: #{resident_lgu_response.address}<br>Longitude: #{resident_lgu_response.longitude}<br>Latitude: #{resident_lgu_response.latitude}<br>Disaster: #{resident_lgu_response.lgu_response.disaster_type}<br>Name:#{resident_lgu_response.resident.first_name} #{resident_lgu_response.resident.last_name}"
        marker.picture({
        "width" =>  38,        
        "height" => 61

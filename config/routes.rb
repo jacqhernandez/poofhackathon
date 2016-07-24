@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/view' => 'pages#view', as: :view
   get '/about' => 'pages#about', as: :about
   get '/contact' => 'pages#contact', as: :contact
+  get '/area' => 'pages#area', as: :area
+  get '/help_centers' => 'pages#centers', as: :centers
   get '/registrations/autocomplete_area_name' => '/registrations/autocomplete_area_name', as: :autocomplete_area_name_registrations
   resources :lgu_responses
 
