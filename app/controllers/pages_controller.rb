@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def donate
   end
+
+  def navbar
+  end
 end
