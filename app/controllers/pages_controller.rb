@@ -35,7 +35,8 @@ class PagesController < ApplicationController
     end
   end
 
-
+  def contact
+  end
 
   def donate
   end

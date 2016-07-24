@@ -120,10 +120,10 @@ ActiveRecord::Schema.define(version: 20160723191826) do
     t.decimal  "latitude"
     t.string   "phone_number"
     t.string   "phone_subscriber"
-    t.boolean  "is_safe"
+    t.boolean  "is_safe",          default: true
     t.integer  "area_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
