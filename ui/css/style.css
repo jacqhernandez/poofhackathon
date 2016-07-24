@@ -20,6 +20,21 @@
 	padding: 0px;
 }
 
+.update{
+
+	padding-top: 20px;
+	padding-left: 50px;
+}
+
+.updatecontent{
+	width:500px;
+	height: 30px;
+	background-color: white;
+	padding-left: 20px;
+	padding-top: 5px;
+
+    border-radius: 25px;
+}
 
 .header{
 	min-height: 100%;
