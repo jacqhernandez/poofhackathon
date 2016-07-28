@@ -1,7 +1,7 @@
 <div style="padding: 5vh 5vw;">
   <h2 style="color:#75BAA8"><%= @area.name %></h2>
   <strong>Province:</strong> <%= @area.province %><br>
-  <strong>Region:</strong> <%= @area.region %><br>
+  <strong>Region:</strong> <%= @area.region.name %><br>
 
   <div style="margin-top: 50px;">
     <h4 style="color:#75BAA8">Residents</h2>
@@ -10,7 +10,7 @@
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Address</th>
+          <th>Home Address</th>
           <th>Phone Number</th>
         </tr>
       </thead>
@@ -19,7 +19,7 @@
           <tr>
             <td><%= r.first_name %></td>
             <td><%= r.last_name %></td>
-            <td><%= r.address %></td>
+            <td><%= r.address %> (Lat: <%= r.latitude %>, Lon: <%= r.longitude %>)</td>
             <td><%= r.phone_number %></td>
           </tr>
         <% end %>

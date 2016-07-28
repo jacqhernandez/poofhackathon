@@ -1,24 +1,138 @@
-
 <div class="container-fluid">
-  <div class="row" style="height: 90vh; overflow:hidden;">
-    <div class="col-md-8">
-      <div id="map" style="height: 100vh; background-color: #E4E2E1;"></div>
+    <div class="row" style="height: 90vh; overflow:autp;">
+      <div class="col-md-6">
+        <div id="map" style="height: 100vh; background-color: #E4E2E1;"></div>
+      </div>
+      <div class="col-md-6" style="height: 100vh;">
+        <% if lgu_officer_signed_in? %>
+          <h4>Filter by date:</h4>
+          <form action="/view">
+            <%= select_tag("start_date", options_for_select(dates.sort),:prompt=>"Start Date", :class=>"form-control date-select") %>
+            <%= select_tag("end_date", options_for_select(dates.sort),:prompt=>"End Date", :class=>"form-control date-select") %>
+            <%= submit_tag 'Search', :class=>"form-control date-submit" %>
+          </form><br><br>
+          <p style="font-size: 19px;">People in need as of <span style="color:#75BAA8;"><%= @date_message %></span></p><br>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Home Address</th>
+                <th>Current Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @resident_lgu_responses.each do |r| %>
+                <tr>
+                  <td><%= r.resident.first_name %> <%= r.resident.last_name %></td>
+                  <td><%= r.resident.address %></td>
+                  <td><%= r.address %> (Lat: <%= r.latitude %>, Lon: <%= r.longitude %>)</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <p style="font-size: 19px;">People who haven't responded as of <span style="color:#75BAA8;"><%= @date_message %></span></p><br>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Home Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Janine Laddaran</td>
+                <td>162 Brgy. Gabihan, Cabiao, Nueva Ecija (Lat: 14.5537703, Lon: 121.05012310000001)</td>
+              </tr>
+              <tr>
+                <td>Shannon Ching </td>
+                <td>271 Brgy. Alagao, Gabaldon, Nueva Ecija (Lat: 15.4537703, Lon: 120.06012310000001)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 19px; color:#75BAA8;">Evacuation centers under your area:</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact Person</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @evacuation_centers.each do |r| %>
+                <tr>
+                  <td><%= r.evacuation_center.name %></td>
+                  <td><%= r.evacuation_center.address %> (Lat: <%= r.evacuation_center.latitude %>, Lon: <%= r.evacuation_center.longitude %>)</td>
+                  <td><%= r.evacuation_center.contact_person %> (<%= r.evacuation_center.contact_number %>)</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <p style="font-size: 19px; color:#75BAA8;">Health centers under your area:</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact Person</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @health_centers.each do |r| %>
+                <tr>
+                  <td><%= r.health_center.name %></td>
+                  <td><%= r.health_center.address %> (Lat: <%= r.health_center.latitude %>, Lon: <%= r.health_center.longitude %>)</td></td>
+                  <td><%= r.health_center.contact_person %> (<%= r.health_center.contact_number %>)</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <p style="font-size: 19px; color:#75BAA8;">Areas in Calamity/Disaster:</p>
+          <% @resident_lgu_responses.each do |r| %>
+            <%= r.address %><br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #75BAA8;">Donate using SMS by texting <span style="color: black;">"<%= r.lgu_response.disaster_type %> AREA<%= r.lgu_response.lgu_officer.area.id%> [amount]"</span></span><br>
+          <% end %>
+          <br>
+          <p style="font-size: 19px; color:#75BAA8;">Evacuation centers near you</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact Person</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Villamor Air Base Golf Course</td>
+                <td>Villamor Golf Club, Colonel Jesus Villamor Air base, Pasay City (Lat: 15.5537703, Lon: 121.1501231)</td>
+                <td>Toni Garcia (09181234567)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 19px; color:#75BAA8;">Health centers near you</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact Person</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Red Cross Makati</td>
+                <td>J. P. Rizal, Makati, Metro Manila (Lat: 14.5537703, Lon: 121.0501231)</td>
+                <td>Kevin Cua (09171234567)</td>
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
     </div>
-    <div class="col-md-4" style="height: 100vh;">
-      <h3>People in need as of <span style="color:#75BAA8;"><%= @date_message %></span></h3><br><br>
-      <h4>Filter by date:</h4>
-      <form action="/view">
-        <%= select_tag("start_date", options_for_select(dates.sort),:prompt=>"Start Date", :class=>"form-control date-select") %>
-        <%= select_tag("end_date", options_for_select(dates.sort),:prompt=>"End Date", :class=>"form-control date-select") %>
-        <%= submit_tag 'Search', :class=>"form-control date-submit" %>
-      </form>
-      <h3>Areas in Calamity/Disaster:</h3>
-      <h3>Nearby Evacuation Areas:</h3>
-    </div>
-  </div>
+  
+
 </div>
-
-
 <script>
 $(document).ready(function() {
   handler = Gmaps.build('Google');

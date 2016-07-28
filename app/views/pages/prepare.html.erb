@@ -3,7 +3,9 @@
     <div class="links">
       <a href="#a" data-toggle="tab"> Disasters & Safety Measures </a> <br>
       <a href="#b" data-toggle="tab"> Government Agencies </a> <br>
-      <a href="#c" data-toggle="tab"> Emergency Hotlines </a>
+      <a href="#c" data-toggle="tab"> Emergency Hotlines </a> <br>
+      <a href="#d" data-toggle="tab"> Evacuation Centers </a> <br>
+      <a href="#e" data-toggle="tab"> Help Centers </a>
     </div>
     <div class="content print active" id="a">
       <div>
@@ -408,6 +410,57 @@ Telefax: 527-0864</p>
 <p>(0920) 96-SCTEX (72839) (traffic hotline) or (045) 459-0522</p>
   </div>
 
+<div class="content print active" id="d">
+      <div>
+        <div class="left"><h1 style="color:#75BAA8;">Evacuation Centers</h1></div>
+        <div class="right"><a href="#" onclick="window.print();return false;">Print this page</a></div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="sub">
+      </div>
+      <hr>
+      <% @areas.each do |a| %>
+        <h2 id="eq" style="color:#75BAA8;"> <%= a.name %> </h2>
+        <% a.evacuation_center_areas.each do |eca| %>
+          <h3> <%= eca.evacuation_center.name %> </h3>
+          <p>Details:
+          <ul>
+            <li>Address: <%= eca.evacuation_center.address %>
+            <li>Contact Person: <%= eca.evacuation_center.contact_person %>
+            <li>Contact Number: <%= eca.evacuation_center.contact_person %>
+          </ul>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
+<div class="content print active" id="e">
+      <div>
+        <div class="left"><h1 style="color:#75BAA8;">Health Centers</h1></div>
+        <div class="right"><a href="#" onclick="window.print();return false;">Print this page</a></div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="sub">
+      </div>
+      <hr>
+      <% @areas.each do |a| %>
+        <h2 id="eq" style="color:#75BAA8;"> <%= a.name %> </h2>
+        <% a.health_center_areas.each do |eca| %>
+          <h3> <%= eca.health_center.name %> </h3>
+          <p>Details:
+          <ul>
+            <li>Address: <%= eca.health_center.address %>
+            <li>Contact Person: <%= eca.health_center.contact_person %>
+            <li>Contact Number: <%= eca.health_center.contact_person %>
+          </ul>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
 
 </div>
 </div>
