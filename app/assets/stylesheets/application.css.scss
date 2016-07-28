@@ -267,7 +267,12 @@ line-height: 100px;
 }
 
 
-.container-d img:hover {
+.container-d:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.container-donate:hover {
     opacity: 0.5;
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
